@@ -38,17 +38,20 @@ body {
 }
 
 .productList{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 
 .product .image{
     border-radius: 10px;
-    width: 285px;
-    height: 285px;
+    /* width: 285px; */
+    /* height: 285px; */
     overflow: hidden;
     position: relative;
     z-index: 2;
@@ -70,7 +73,7 @@ body {
     font-family: "Red Hat Text", sans-serif;
 
     padding: 12px 15px;
-    margin: 0 50px;
+    margin: 0 15%;
     border-radius: 70px;
 
 
@@ -112,11 +115,11 @@ body {
     color: #C83B0E;
 }
 
-.product .name{
+.product .category{
     color: #7d7572;
 }
 
-.product .title{
+.product .name{
     font-size: 19px;
     font-weight: 600;
     color: #2B1913;
@@ -154,4 +157,55 @@ body {
 :where(.fa-plus, .fa-minus):hover{
     background-color: #FCF8F5;
     color: #C83B0E;
+}
+
+@media (max-width: 1028px){
+    .productList{
+        grid-template-columns: repeat(2, 1fr)
+        
+    }
+
+}
+
+@media (max-width: 768px){
+    .container{
+        flex-direction: column;
+    }
+    .products{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .productList{
+        grid-template-columns: repeat(2, 1fr);
+
+        
+    }
+}
+
+@media (max-width: 568px){
+    .container{
+       padding: 6%;
+        flex-direction: column;
+        
+        
+    }
+    .products{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .products h1 {
+        font-size: 38px;
+    }
+
+    .productList{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product .btn{
+        margin: 0 20%;
+        padding: 10px 13px;
+        font-size: 14px;
+    }
+    
 }

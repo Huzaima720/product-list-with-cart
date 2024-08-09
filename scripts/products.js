@@ -11,15 +11,21 @@ async function getData() {
 
 getData();
 
+const productList = document.querySelector(".productList");
+
 async function displayData(data) {
-  const productList = document.querySelector(".productList");
 
   data.forEach((product) => {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
     productDiv.innerHTML = `
             <div class="image">
+            <picture>
+            <source srcset="${product.image.mobile}" media="(max-width: 568px)">
+            <source srcset="${product.image.tablet}" media="(max-width: 768px)">
+            <source srcset="${product.image.desktop}" media="(min-width: 769px)">
             <img src=${product.image.desktop} alt="">
+            </picture>
           </div>
           <div class="add-cart btn">
             <i class="fa-solid fa-cart-plus"></i>
@@ -31,8 +37,8 @@ async function displayData(data) {
             <i class="fa-solid fa-minus"></i>
           </div>
           <div class="details">
-            <p class="name">${product.category}</p>
-            <h3 class="title">${product.name}</h3>
+            <p class="category">${product.category}</p>
+            <h3 class="name">${product.name}</h3>
             <span class="price">$${product.price}</span>
           </div>
           `;
@@ -86,3 +92,23 @@ async function displayData(data) {
 }
 
 
+function resetProductCard(name){
+  const products = productList.children;
+
+  Array.from(products).forEach((product) => {
+    const productName = product.querySelector(".name").innerText;
+    const img = product.querySelector(".image");
+    const addCartBtn = product.querySelector(".add-cart");
+    const cartControlBtn = product.querySelector(".cart-control");
+    const quantity = product.querySelector(".quantity");
+    if (productName === name) {
+      img.classList.remove("selected");
+      addCartBtn.style.display = "flex";
+      cartControlBtn.style.display = "none";
+      quantity.innerText = 0;
+       
+    }
+    
+
+})
+}

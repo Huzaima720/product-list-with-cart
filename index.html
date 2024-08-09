@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="./styles/product.css">
   <link rel="stylesheet" href="./styles/cart.css">
+  <link rel="stylesheet" href="./styles/modal.css">
 
   <title>Frontend Mentor | Product list with cart</title>
 
@@ -36,8 +37,8 @@
       <h1>Desserts</h1>
       <div class="productList">
         <!-- Product list will be dynamically generated here using JavaScript -->
-        </div>
-      
+      </div>
+
     </div>
 
 
@@ -57,31 +58,56 @@
         </div>
         <p>Your Added Items will appear here</p>
       </div>
-      
+
       <div class="items">
-      
-        
-      </div> 
-      <div class="cart-total">
-        <p>Order Total</p>
-        <h2>$46.50</h2>
+
+
       </div>
-      <div class="info">
-        <p>This is a <b>carbon-neutral</b> delivery</p>
+      <div class="details">
+        <div class="cart-total">
+          <p>Order Total</p>
+          <h2>$46.50</h2>
+        </div>
+        <div class="info">
+          <p>This is a <b>carbon-neutral</b> delivery</p>
+        </div>
+        <div class="confirm">
+          <button class="btn">Confirm Order</button>
+        </div>
       </div>
-      <div class="confirm">
-        <button class="btn">Confirm Order</button>
-      </div> 
     </div>
   </div>
+  <dialog data-modal class="modal">
+    
+      <div class="modal-header">
+        <img src="assets/images/icon-order-confirmed.svg" alt="">
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food</p>
+      </div>
+      <div class="modal-body">
+        <div class="order-items">
+          <!-- Order items will be dynamically generated here using JavaScript -->
+        </div>
+        <div class="order-total">
+          <p>Order Total</p>
+          <h2 >$46.50</h2>
+          </div>
+  
+      </div>
+      <div class="modal-footer">
+        <button class="btn data-close-modal">Start New Order</button>
+    
+
+  </dialog>
 
 
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
   <script src="scripts/products.js"></script>
   <script src="scripts/cart.js"></script>
+  <script src="scripts/modal.js"></script>
 </body>
 
 </html>
