@@ -59,28 +59,46 @@ body {
     object-fit: cover;
 }
 
-.add-cart{
+.product .btn{
     /* width: 60%; */
     position: relative;
     bottom: 30px;
     z-index: 999;
-
     display: flex;
     align-items: center;
+    
+    font-family: "Red Hat Text", sans-serif;
+
+    padding: 12px 15px;
+    margin: 0 50px;
+    border-radius: 70px;
+
+
+}
+
+.product .add-cart{
+ 
+    
     justify-content: center;
     gap: 10px;
 
-    font-family: "Red Hat Text", sans-serif;
     font-weight: 600;
     font-size: 15px;
     background-color: white;
 
-    padding: 12px;
-    margin: 0 50px;
-    border: 10px;
-    border-radius: 70px;
+ 
+   
     border: 1px solid #7d7572;
 }
+
+.product .cart-control{
+    display: none;
+    background-color: #C83B0E;
+    color: #FCF8F5;
+    justify-content: space-between;
+}
+
+
 
 .product .details{
     margin-top: -15px; 
@@ -111,3 +129,29 @@ body {
 }
 
 
+
+.image.selected{
+    border: 2px solid #C83B0E;
+    transition: transform 0.3s ease;
+} 
+
+
+.fa-plus , .fa-minus{
+    cursor: pointer;
+
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FCF8F5;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 14px;
+}
+
+:where(.fa-plus, .fa-minus):active,
+:where(.fa-plus, .fa-minus):hover{
+    background-color: #FCF8F5;
+    color: #C83B0E;
+}
