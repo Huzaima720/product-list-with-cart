@@ -2,13 +2,15 @@
 
 const order = document.querySelector(".cart .confirm ");
 
-const modal = document.querySelector('[data-modal]');
+const modal = document.querySelector('.modal');
 
 
 const orderItems = document.querySelector('.order-items');
 
 order.addEventListener("click", () => {
-  modal.showModal()
+    modal.showModal();
+  modal.style.display = "flex"
+
 
   cart.forEach((item) =>{
     const itemDiv = document.createElement("div");
@@ -33,9 +35,9 @@ order.addEventListener("click", () => {
         
         
     })
-    const closeModalBtn = document.querySelector('[data-close-modal]');
+    const closeModalBtn = document.querySelector('.model-footer');
     closeModalBtn.addEventListener('click', () =>{
-        console.log("closeModal")
+        modal.style.display = 'none';
     })
 
 
