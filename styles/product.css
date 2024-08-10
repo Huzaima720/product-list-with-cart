@@ -133,10 +133,11 @@ body {
 
 
 
-.image.selected{
+.image.selected {
     border: 2px solid #C83B0E;
-    transition: transform 0.3s ease;
+    
 } 
+
 
 
 .fa-plus , .fa-minus{
@@ -158,11 +159,31 @@ body {
     background-color: #FCF8F5;
     color: #C83B0E;
 }
-
-@media (max-width: 1028px){
+@media (max-width: 1200px){
+    .container{
+        padding: 4% ;
+    }
     .productList{
         grid-template-columns: repeat(2, 1fr)
+    }
+    .products{
+        width: 58%;
+       
+    }
+}
+@media (max-width: 920px){
+    .container{
+
+        flex-direction: column;
+
+    }
+    .productList{
+        grid-template-columns: repeat(3, 1fr)
         
+    }
+    .products{
+        width: 100%;
+        margin-bottom: 25px;
     }
 
 }

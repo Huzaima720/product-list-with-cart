@@ -127,27 +127,20 @@
     background-color: #C83B0E;
     cursor: pointer;
 }
+@media  (max-width: 1200px){
+    .cart{
+        width: 40%;
+        padding: 20px;
+    }
+
+}
 
 @media  (max-width: 768px){
     .cart{
         width: 100%;
         padding: 20px;
     }
-    /* .cart h3{
-        font-size: 26px;
-    }
-    .item .name{
-        font-size: 16px;
-    }
-    .qty , .price , .total{
-        font-size: 14px;
-    }
-
-    .cart .info {
-        padding: 13px;
-        font-size: 14px;
-    }
-     */
+ 
 }
 
 

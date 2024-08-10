@@ -1,11 +1,14 @@
 let cart = [];
 
-function addToCart(product) {
+async function addToCart(product) {
+
   let name = product.querySelector(".name").innerText;
+  
   let price = product.querySelector(".price").innerText;
   price = parseFloat(price.replace(/[^0-9.]/g, ""));
   let quantity = product.querySelector(".quantity").innerText;
   let totalPrice = parseFloat(price) * parseFloat(quantity);
+ 
 
   let item = {
     name,
@@ -21,7 +24,7 @@ function addToCart(product) {
 function updateCart(product) {
   let name = product.querySelector(".name").innerText;
   let price = product.querySelector(".price").innerText;
-  price = parseFloat(price.replace(/[^0-9]/g, ""));
+  price = parseFloat(price.replace(/[^0-9.]/g, ""));
 
   let quantity = product.querySelector(".quantity").innerText;
   let totalPrice = parseFloat(price) * parseFloat(quantity);
